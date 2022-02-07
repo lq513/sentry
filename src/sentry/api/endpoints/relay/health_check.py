@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from sentry.api.base import Endpoint
 
 
-class RelayHealthCheck(Endpoint):
+class RelayHealthCheck(Endpoint):  # type: ignore
     """
     Endpoint checked by downstream Relay when a suspected network error is encountered.
     This endpoint doesn't do anything besides returning an Ok, and the downstream Relay
@@ -14,8 +14,8 @@ class RelayHealthCheck(Endpoint):
     Relay doesn't need to care if it connects to another Relay or directly to sentry.
     """
 
-    authentication_classes = []
-    permission_classes = []
+    authentication_classes = []  # type: ignore
+    permission_classes = []  # type: ignore
 
     def get(self, request: Request) -> Response:
         return Response({"is_healthy": True}, status=200)

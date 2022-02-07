@@ -18,7 +18,7 @@ class RelayRegisterChallengeSerializer(RelayIdSerializer):
     public_key = serializers.CharField(max_length=64, required=True)
 
 
-class RelayRegisterChallengeEndpoint(Endpoint):
+class RelayRegisterChallengeEndpoint(Endpoint):  # type: ignore
     authentication_classes = ()
     permission_classes = ()
 

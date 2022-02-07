@@ -19,7 +19,7 @@ class RelayRegisterResponseSerializer(RelayIdSerializer):
     token = serializers.CharField(required=True)
 
 
-class RelayRegisterResponseEndpoint(Endpoint):
+class RelayRegisterResponseEndpoint(Endpoint):  # type: ignore
     authentication_classes = ()
     permission_classes = ()
 
